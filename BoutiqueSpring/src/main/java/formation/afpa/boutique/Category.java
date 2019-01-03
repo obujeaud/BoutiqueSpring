@@ -16,6 +16,10 @@ public class Category {
 	@GeneratedValue(strategy = GenerationType.AUTO, generator = "native")
 	@GenericGenerator(name = "native", strategy = "native")
 	private Long id_category;
+	public Long getId_category() {
+		return id_category;
+	}
+
 	@Column(name="name", length=150, nullable=false)
 	private String name;
 	@Column(name="code", length=150, nullable=false)

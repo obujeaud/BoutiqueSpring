@@ -28,6 +28,10 @@ public class Item {
 	@GeneratedValue(strategy = GenerationType.AUTO, generator = "native")
 	@GenericGenerator(name = "native", strategy = "native")
 	private Long id_item;
+	public Long getId_item() {
+		return id_item;
+	}
+
 	@Column(name = "name", length = 150, nullable = false)
 	private String name;
 	@Column(name = "description", length = 150, nullable = false)

@@ -18,11 +18,16 @@ public class Image {
 	@GeneratedValue(strategy = GenerationType.AUTO, generator = "native")
 	@GenericGenerator(name = "native", strategy = "native")
 	private Long id_image;
-	@Column(name="altText", length=150, nullable=false)
+
+	public Long getId_image() {
+		return id_image;
+	}
+
+	@Column(name = "altText", length = 150, nullable = false)
 	private String altText;
-	@Column(name="path", length=150, nullable=false)
+	@Column(name = "path", length = 150, nullable = false)
 	private String path;
-	@ManyToOne(cascade= {CascadeType.REFRESH}, targetEntity=Item.class)
+	@ManyToOne(cascade = { CascadeType.REFRESH }, targetEntity = Item.class)
 	private Item i;
 
 	public Item getI() {
@@ -32,7 +37,7 @@ public class Image {
 	public void setI(Item i) {
 		this.i = i;
 	}
-	
+
 	public Image(String altText, String path, Item i) {
 		super();
 		this.altText = altText;
