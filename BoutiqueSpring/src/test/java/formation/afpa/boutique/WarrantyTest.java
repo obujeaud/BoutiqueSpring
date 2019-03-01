@@ -61,5 +61,4 @@ public class WarrantyTest {
 		wr.deleteById(w.getId_warranty());
 		assert (entityM.find(Warranty.class, w.getId_warranty()) == null);
 	}
-
 }

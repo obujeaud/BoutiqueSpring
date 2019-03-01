@@ -16,6 +16,10 @@ public class Category {
 	@GeneratedValue(strategy = GenerationType.AUTO, generator = "native")
 	@GenericGenerator(name = "native", strategy = "native")
 	private Long id_category;
+	public void setId_category(Long id_category) {
+		this.id_category = id_category;
+	}
+
 	public Long getId_category() {
 		return id_category;
 	}

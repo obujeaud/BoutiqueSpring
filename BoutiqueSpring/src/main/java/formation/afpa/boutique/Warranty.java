@@ -16,6 +16,10 @@ public class Warranty {
 	@GeneratedValue(strategy = GenerationType.AUTO, generator = "native")
 	@GenericGenerator(name = "native", strategy = "native")
 	private Long id_warranty;
+	public void setId_warranty(Long id_warranty) {
+		this.id_warranty = id_warranty;
+	}
+
 	public Long getId_warranty() {
 		return id_warranty;
 	}

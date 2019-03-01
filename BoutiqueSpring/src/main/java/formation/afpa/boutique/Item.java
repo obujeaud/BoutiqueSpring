@@ -28,6 +28,10 @@ public class Item {
 	@GeneratedValue(strategy = GenerationType.AUTO, generator = "native")
 	@GenericGenerator(name = "native", strategy = "native")
 	private Long id_item;
+	public void setId_item(Long id_item) {
+		this.id_item = id_item;
+	}
+
 	public Long getId_item() {
 		return id_item;
 	}
@@ -41,8 +45,16 @@ public class Item {
 	@ManyToMany(fetch = FetchType.LAZY, cascade = { CascadeType.REFRESH })
 	@JoinTable(name = "item_category", joinColumns = @JoinColumn(name = "id_item"), inverseJoinColumns = @JoinColumn(name = "id_category"))
 	private Set<Category> cat = new HashSet<>();
-	@OneToOne(cascade = { CascadeType.REFRESH }, orphanRemoval = true)
+	@OneToOne(cascade = { CascadeType.REMOVE }, orphanRemoval = true)
 	private Warranty w;
+	public Warranty getW() {
+		return w;
+	}
+
+	public void setW(Warranty w) {
+		this.w = w;
+	}
+
 	@OneToMany(mappedBy = "i", cascade = { CascadeType.REFRESH })
 	private Set<Image> img = new HashSet<>();
 

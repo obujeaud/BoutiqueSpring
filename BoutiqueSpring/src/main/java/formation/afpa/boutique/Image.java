@@ -19,6 +19,10 @@ public class Image {
 	@GenericGenerator(name = "native", strategy = "native")
 	private Long id_image;
 
+	public void setId_image(Long id_image) {
+		this.id_image = id_image;
+	}
+
 	public Long getId_image() {
 		return id_image;
 	}
